@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: echodesk-db
+    environment:
+      POSTGRES_DB: echodesk
+      POSTGRES_USER: echodesk
+      POSTGRES_PASSWORD: echodesk
+    ports:
+      - "5432:5432"
+    volumes:
+      - echodesk_pgdata:/var/lib/postgresql/data
+
+volumes:
+  echodesk_pgdata:
